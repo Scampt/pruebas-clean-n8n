@@ -1,0 +1,27 @@
+{
+  "name": "n8n-render",
+  "version": "1.0.0",
+  "description": "n8n deployment on Render.com",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "node setup-persistence.js",
+    "start": "NODE_OPTIONS='--max-old-space-size=512' n8n start",
+    "build": "npm install",
+    "dev": "n8n start --tunnel",
+    "healthcheck": "curl -f http://localhost:10000/healthz || exit 1"
+  },
+  "dependencies": {
+    "n8n": "^1.0.0",
+    "sqlite3": "^5.1.6"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "keywords": [
+    "n8n",
+    "automation"
+  ],
+  "author": "",
+  "license": "ISC"
+}
